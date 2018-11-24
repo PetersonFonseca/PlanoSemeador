@@ -1,5 +1,6 @@
 package br.com.planosemeador.planosemeador;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -158,15 +160,25 @@ public class MainActivity extends AppCompatActivity
                                 pesquisar = findViewById(R.id.pesquisar_bt);
 
 
+
+
                                 pesquisar.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
                                         String textoDigitado = buscaEdit.getText().toString();
+                                        String textoDigitadoLow = textoDigitado.toLowerCase();
 
                                         fornecedores = FirebaseDatabase.getInstance()
                                                 .getReference().child("fornecedores");
 
-                                        Query query1 = fornecedores.orderByChild("nomeFornecedor").equalTo(textoDigitado).limitToFirst(10);
+                                        listaFilmes.clear();
+
+
+
+
+
+
+                                        Query query1 = fornecedores.orderByChild("nomeFornecedor").equalTo(textoDigitadoLow).limitToFirst(10);
                                         query1.addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -178,8 +190,12 @@ public class MainActivity extends AppCompatActivity
                                                         String telefoneFornecedor = fornecedor.telefoneFornecedor;
                                                         Filme filme = new Filme(nomeFornecedor, enderecoFornecedor, telefoneFornecedor);
                                                         listaFilmes.add(filme);
+
                                                     }
                                                 }
+
+                                                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                imm.hideSoftInputFromWindow(buscaEdit.getWindowToken(), 0);
                                             }
 
                                             @Override
@@ -187,6 +203,8 @@ public class MainActivity extends AppCompatActivity
 
                                             }
                                         });
+
+
                                     }
                                 });
 
@@ -225,6 +243,8 @@ public class MainActivity extends AppCompatActivity
         };
 
     }
+
+
 
     @Override
     protected void onStop(){
