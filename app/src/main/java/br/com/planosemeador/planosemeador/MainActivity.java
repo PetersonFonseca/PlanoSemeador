@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -17,8 +20,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +38,9 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity
@@ -56,6 +63,10 @@ public class MainActivity extends AppCompatActivity
     DatabaseReference fornecedores;
     DatabaseReference nomeFornecedor;
 
+    //Lista
+    private RecyclerView recyclerView;
+    private List<Filme> listaFilmes = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +74,59 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Lista inicio
+
+        recyclerView = findViewById(R.id.recyclerView);
+
+        //Listagem de filmes
+        this.criarFilmes();
+
+        //Configurar adapter
+        Adapter adapter = new Adapter( listaFilmes );
+
+        //Configurar Recyclerview
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
+        recyclerView.setAdapter( adapter );
+
+        //evento de click
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        getApplicationContext(),
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                Filme filme = listaFilmes.get( position );
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        "Item pressionado: " + filme.getTituloFilme(),
+                                        Toast.LENGTH_SHORT
+                                ).show();
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+                                Filme filme = listaFilmes.get( position );
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        "Click longo: "  + filme.getTituloFilme(),
+                                        Toast.LENGTH_SHORT
+                                ).show();
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                            }
+                        }
+                )
+        );
+
+        //Lista Fim
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -95,7 +159,7 @@ public class MainActivity extends AppCompatActivity
                                 buscaTextEdit = findViewById(R.id.busca_text_id);
                                 buscaEdit = findViewById(R.id.busca_edit_id);
                                 pesquisar = findViewById(R.id.pesquisar_bt);
-                                resultadoBusca = findViewById(R.id.resultado_busca_id);
+
 
                                 pesquisar.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -105,7 +169,7 @@ public class MainActivity extends AppCompatActivity
                                         fornecedores = FirebaseDatabase.getInstance()
                                                 .getReference().child("fornecedores");
 
-                                        Query query1 = fornecedores.orderByChild("nomeFornecedor").equalTo(textoDigitado).limitToFirst(1);
+                                        Query query1 = fornecedores.orderByChild("nomeFornecedor").equalTo(textoDigitado).limitToFirst(10);
                                         query1.addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -113,8 +177,8 @@ public class MainActivity extends AppCompatActivity
                                                     for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                                                         Fornecedor fornecedor = postSnapshot.getValue(Fornecedor.class);
                                                         String nomeString = fornecedor.getNomeFornecedor();
+                                                        Log.i("RESULTB", nomeString);
 
-                                                        resultadoBusca.setText(nomeString);
                                                     }
                                                 }
                                             }
@@ -232,5 +296,41 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    //Lista
+    public void criarFilmes(){
+
+        Filme filme = new Filme("Homem Aranha - De volta ao lar", "Aventura", "2017");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Mulher Maravilha", "Fantasia", "2017");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Liga da Justiça", "Ficção", "2017");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Capitão América - Guerra Civíl", "Aventura/Ficção", "2016");
+        listaFilmes.add(filme);
+
+        filme = new Filme("It: A Coisa", "Drama/Terror", "2017");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Pica-Pau: O Filme", "Comédia/Animação", "2017");
+        listaFilmes.add(filme);
+
+        filme = new Filme("A Múmia", "Terror", "2017");
+        listaFilmes.add(filme);
+
+        filme = new Filme("A Bela e a Fera", "Romance", "2017");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Meu malvado favorito 3", "Comédia", "2017");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Carros 3", "Comédia", "2017");
+        listaFilmes.add(filme);
+
     }
 }
