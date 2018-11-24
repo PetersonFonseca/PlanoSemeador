@@ -1,10 +1,12 @@
 package br.com.planosemeador.planosemeador;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,6 +29,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -39,6 +47,15 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     Usuario usuario;
     FirebaseUser user;
+
+    //Busca
+    TextView buscaTextEdit;
+    EditText buscaEdit;
+    Button pesquisar;
+    TextView resultadoBusca;
+    DatabaseReference fornecedores;
+    DatabaseReference nomeFornecedor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +90,45 @@ public class MainActivity extends AppCompatActivity
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             //texta se o usuario ja existe
                             if (dataSnapshot.exists()) {
-//                                String idUsuario = dataSnapshot.child("idUsuarioFidelidade").getValue().toString();
-//                                setTitle(idUsuario + " - Milleton - Promoção");
+
+                                // Inicio Busca
+                                buscaTextEdit = findViewById(R.id.busca_text_id);
+                                buscaEdit = findViewById(R.id.busca_edit_id);
+                                pesquisar = findViewById(R.id.pesquisar_bt);
+                                resultadoBusca = findViewById(R.id.resultado_busca_id);
+
+                                pesquisar.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String textoDigitado = buscaEdit.getText().toString();
+
+                                        fornecedores = FirebaseDatabase.getInstance()
+                                                .getReference().child("fornecedores");
+
+                                        Query query1 = fornecedores.orderByChild("nomeFornecedor").equalTo(textoDigitado).limitToFirst(1);
+                                        query1.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.exists()){
+                                                    for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                                                        Fornecedor fornecedor = postSnapshot.getValue(Fornecedor.class);
+                                                        String nomeString = fornecedor.getNomeFornecedor();
+
+                                                        resultadoBusca.setText(nomeString);
+                                                    }
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    }
+                                });
+
+                                //Fim Busca
+
                             }else{
                                 //Ainda nao existe, entao inicializa um novo com as configurações padrão
                                 String telefoneUser = user.getPhoneNumber();
