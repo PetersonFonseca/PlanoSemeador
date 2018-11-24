@@ -67,10 +67,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="fsfsd"/>
 
     </LinearLayout>
 

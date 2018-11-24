@@ -79,9 +79,6 @@ public class MainActivity extends AppCompatActivity
 
         recyclerView = findViewById(R.id.recyclerView);
 
-        //Listagem de filmes
-        this.criarFilmes();
-
         //Configurar adapter
         Adapter adapter = new Adapter( listaFilmes );
 
@@ -176,9 +173,11 @@ public class MainActivity extends AppCompatActivity
                                                 if (dataSnapshot.exists()){
                                                     for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                                                         Fornecedor fornecedor = postSnapshot.getValue(Fornecedor.class);
-                                                        String nomeString = fornecedor.getNomeFornecedor();
-                                                        Log.i("RESULTB", nomeString);
-
+                                                        String nomeFornecedor = fornecedor.getNomeFornecedor();
+                                                        String enderecoFornecedor = fornecedor.getEnderecoFornecedor();
+                                                        String telefoneFornecedor = fornecedor.telefoneFornecedor;
+                                                        Filme filme = new Filme(nomeFornecedor, enderecoFornecedor, telefoneFornecedor);
+                                                        listaFilmes.add(filme);
                                                     }
                                                 }
                                             }
@@ -296,41 +295,5 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-
-    //Lista
-    public void criarFilmes(){
-
-        Filme filme = new Filme("Homem Aranha - De volta ao lar", "Aventura", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Mulher Maravilha", "Fantasia", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Liga da Justiça", "Ficção", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Capitão América - Guerra Civíl", "Aventura/Ficção", "2016");
-        listaFilmes.add(filme);
-
-        filme = new Filme("It: A Coisa", "Drama/Terror", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Pica-Pau: O Filme", "Comédia/Animação", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("A Múmia", "Terror", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("A Bela e a Fera", "Romance", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Meu malvado favorito 3", "Comédia", "2017");
-        listaFilmes.add(filme);
-
-        filme = new Filme("Carros 3", "Comédia", "2017");
-        listaFilmes.add(filme);
-
     }
 }
