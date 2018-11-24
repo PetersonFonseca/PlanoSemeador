@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "939227332692",
+    "firebase_url": "https://planosemeador-19d2e.firebaseio.com",
+    "project_id": "planosemeador-19d2e",
+    "storage_bucket": "planosemeador-19d2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939227332692:android:71f40e9aa223bec6",
+        "android_client_info": {
+          "package_name": "br.com.planosemeador.planosemeador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939227332692-168inlgkqo3iub35rbf1dlmpaffjiksi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.planosemeador.planosemeador",
+            "certificate_hash": "b2b4364697bc54346ad1937379149f26f540a95c"
+          }
+        },
+        {
+          "client_id": "939227332692-nue8mroi1k0a5d9lepvlbfnkus2djplk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhcpY-haLAu0vZMq0O6vF5PiG7U7MW2Pw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939227332692-nue8mroi1k0a5d9lepvlbfnkus2djplk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

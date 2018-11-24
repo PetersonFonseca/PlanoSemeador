@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/main_activity_menu"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Buscar" />
+        <item
+            android:id="@+id/como_funciona"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Como Funciona" />
+        <item
+            android:id="@+id/sobre_nos"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Sobre nós" />
+
+    </group>
+
+</menu>
