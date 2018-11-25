@@ -57,19 +57,8 @@ public class MainActivity extends AppCompatActivity
     Usuario usuario;
     FirebaseUser user;
 
-    //Busca
-    TextView buscaTextEdit;
-    EditText buscaEdit;
-    Button pesquisar;
-    DatabaseReference fornecedores;
-
     //botoes navegacao
     Button profissionaisDaSaudeBt;
-
-
-    //Lista
-    private RecyclerView recyclerView;
-    private List<Fornecedor> listaFornecedores = new ArrayList<>();
 
 
     @Override
@@ -78,56 +67,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        //Lista inicio
-
-        recyclerView = findViewById(R.id.recyclerView);
-
-        //Configurar adapter
-        Adapter adapter = new Adapter( listaFornecedores );
-
-        //Configurar Recyclerview
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
-        recyclerView.setAdapter( adapter );
-
-        //evento de click
-        recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(
-                        getApplicationContext(),
-                        recyclerView,
-                        new RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Fornecedor fornecedor = listaFornecedores.get( position );
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "Item pressionado: " + fornecedor.getNomeFornecedor(),
-                                        Toast.LENGTH_SHORT
-                                ).show();
-                            }
-
-                            @Override
-                            public void onLongItemClick(View view, int position) {
-                                Fornecedor fornecedor = listaFornecedores.get( position );
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "Click longo: "  + fornecedor.getNomeFornecedor(),
-                                        Toast.LENGTH_SHORT
-                                ).show();
-                            }
-
-                            @Override
-                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                            }
-                        }
-                )
-        );
-
-        //Lista Fim
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -164,7 +103,7 @@ public class MainActivity extends AppCompatActivity
                                     public void onClick(View view) {
 
                                         String s = "Funciona";
-                                        Intent i = new Intent(MainActivity.this, TextExtraActivity.class);
+                                        Intent i = new Intent(MainActivity.this, Main2Activity.class);
                                         i.putExtra("name", s);
                                         startActivity(i);
 
@@ -179,52 +118,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-                                // Inicio Busca
-                                buscaTextEdit = findViewById(R.id.busca_text_id);
-                                buscaEdit = findViewById(R.id.busca_edit_id);
-                                pesquisar = findViewById(R.id.pesquisar_bt);
 
-                                pesquisar.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        String textoDigitado = buscaEdit.getText().toString();
-                                        String textoDigitadoLow = textoDigitado.toLowerCase();
-
-                                        fornecedores = FirebaseDatabase.getInstance()
-                                                .getReference().child("fornecedores");
-
-                                       listaFornecedores.clear();
-
-                                        Query query1 = fornecedores.orderByChild("nomeFornecedor").equalTo(textoDigitadoLow).limitToFirst(10);
-                                        query1.addListenerForSingleValueEvent(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                if (dataSnapshot.exists()){
-                                                    for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                                                        Fornecedor fornecedor = postSnapshot.getValue(Fornecedor.class);
-                                                        String nomeFornecedor = fornecedor.getNomeFornecedor();
-                                                        String enderecoFornecedor = fornecedor.getEnderecoFornecedor();
-                                                        String telefoneFornecedor = fornecedor.getTelefoneFornecedor();
-                                                        String desconto = fornecedor.getDesconto();
-                                                        Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, desconto + " %");
-
-                                                        listaFornecedores.add(fornecedorRecycleView);
-
-                                                    }
-                                                }
-
-                                            }
-
-                                            @Override
-                                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                            }
-                                        });
-
-                                    }
-                                });
-
-                                //Fim Busca
 
                             }else{
                                 //Ainda nao existe, entao inicializa um novo com as configurações padrão

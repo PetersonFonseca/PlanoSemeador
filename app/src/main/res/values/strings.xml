@@ -8,4 +8,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_como_funciona">ComoFuncionaActivity</string>
     <string name="title_activity_sobre_nos">SobreNosActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

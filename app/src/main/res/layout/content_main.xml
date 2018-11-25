@@ -126,61 +126,6 @@
                 android:textSize="@dimen/letra_botao"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/conteudo_adicionar_pontos_id"
-            android:orientation="vertical"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="50dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="O que você procura?"
-                android:id="@+id/busca_text_id"
-                android:textSize="15dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/busca_edit_id"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:maxLength="25"
-                android:textSize="15dp"
-                android:layout_gravity="center_horizontal"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/pesquisar_bt"
-                android:text="Pesquisar"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
