@@ -34,7 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main2Activity extends AppCompatActivity
+public class MedicosActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //Busca
@@ -55,34 +55,34 @@ public class Main2Activity extends AppCompatActivity
 
         // Inicio Busca
 
-                fornecedores = FirebaseDatabase.getInstance()
-                        .getReference().child("fornecedores");
+        fornecedores = FirebaseDatabase.getInstance()
+                .getReference().child("fornecedores");
 
-                listaFornecedores.clear();
+        listaFornecedores.clear();
 
-                Query query2 = fornecedores.orderByChild("categoria").equalTo("clinico_geral").limitToFirst(30);
-                query2.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()){
-                            for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                                Fornecedor fornecedor = postSnapshot.getValue(Fornecedor.class);
-                                String nomeFornecedor = fornecedor.getNomeFornecedor();
-                                String enderecoFornecedor = fornecedor.getEnderecoFornecedor();
-                                String telefoneFornecedor = fornecedor.getTelefoneFornecedor();
-                                String desconto = fornecedor.getDesconto();
-                                Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, desconto + " %");
+        Query query2 = fornecedores.orderByChild("categoria").equalTo("clinico_geral").limitToFirst(30);
+        query2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                        Fornecedor fornecedor = postSnapshot.getValue(Fornecedor.class);
+                        String nomeFornecedor = fornecedor.getNomeFornecedor();
+                        String enderecoFornecedor = fornecedor.getEnderecoFornecedor();
+                        String telefoneFornecedor = fornecedor.getTelefoneFornecedor();
+                        String desconto = fornecedor.getDesconto();
+                        Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, desconto + " %");
 
-                                listaFornecedores.add(fornecedorRecycleView);
-                            }
-                        }
+                        listaFornecedores.add(fornecedorRecycleView);
                     }
+                }
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
+            }
+        });
 
 
 

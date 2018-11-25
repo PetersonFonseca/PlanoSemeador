@@ -108,26 +108,22 @@ public class MainActivity extends AppCompatActivity
                             if (dataSnapshot.exists()) {
                                 //Botões de navegação
 
-                                medicos = findViewById(R.id.botaoProfissionaisSaudeId);
+                                medicos = findViewById(R.id.medicosBtId);
                                 medicos.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        String s = "clinico_geral";
-                                        Intent medicosIntent = new Intent(MainActivity.this, Main2Activity.class);
-                                        medicosIntent.putExtra("name", s);
-                                        startActivity(medicosIntent);
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        startActivity(intent);
                                         finish();
                                     }
                                 });
 
-                                clinicas = findViewById(R.id.botaoProfissionaisSaudeId);
+                                clinicas = findViewById(R.id.clinicasBtId);
                                 clinicas.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        String s = "clinicas";
-                                        Intent i = new Intent(MainActivity.this, Main2Activity.class);
-                                        i.putExtra("name", s);
-                                        startActivity(i);
+                                        Intent intent = new Intent(MainActivity.this, ClinicasActivity.class);
+                                        startActivity(intent);
                                         finish();
                                     }
                                 });

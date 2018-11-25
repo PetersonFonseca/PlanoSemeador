@@ -9,4 +9,6 @@
     <string name="title_activity_como_funciona">ComoFuncionaActivity</string>
     <string name="title_activity_sobre_nos">SobreNosActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_medicos">MedicosActivity</string>
+    <string name="title_activity_clinicas">ClinicasActivity</string>
 </resources>

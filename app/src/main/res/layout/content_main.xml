@@ -23,7 +23,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/botaoProfissionaisSaudeId"
+                android:id="@+id/medicosBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Médicos"
@@ -33,7 +33,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/id2"
+                android:id="@+id/clinicasBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Clínicas"
