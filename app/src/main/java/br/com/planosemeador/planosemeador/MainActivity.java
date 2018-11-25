@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity
     Button pesquisar;
     DatabaseReference fornecedores;
 
+    //botoes navegacao
+    Button profissionaisDaSaudeBt;
+
 
     //Lista
     private RecyclerView recyclerView;
@@ -152,6 +155,29 @@ public class MainActivity extends AppCompatActivity
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             //texta se o usuario ja existe
                             if (dataSnapshot.exists()) {
+                                //Botões de navegação
+
+                                profissionaisDaSaudeBt = findViewById(R.id.botaoProfissionaisSaudeId);
+
+                                profissionaisDaSaudeBt.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+
+                                        String s = "Funciona";
+                                        Intent i = new Intent(MainActivity.this, TextExtraActivity.class);
+                                        i.putExtra("name", s);
+                                        startActivity(i);
+
+
+                                    }
+                                });
+
+
+
+
+
+
+
 
                                 // Inicio Busca
                                 buscaTextEdit = findViewById(R.id.busca_text_id);
