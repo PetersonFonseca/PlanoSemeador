@@ -4,31 +4,23 @@
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <TextView
-            android:id="@+id/textTitulo"
-            android:layout_width="wrap_content"
+            android:id="@+id/nomeFornecedorId"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:text="Titulo"
             android:textSize="18sp"
             android:textStyle="bold" />
-
         <TextView
-            android:id="@+id/textAno"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ano" />
-    </LinearLayout>
+            android:id="@+id/telefoneFornecedorId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/enderecoFornecedorId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/descontoId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/textGenero"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Genero" />
 </LinearLayout>

@@ -61,13 +61,12 @@ public class MainActivity extends AppCompatActivity
     TextView buscaTextEdit;
     EditText buscaEdit;
     Button pesquisar;
-    TextView resultadoBusca;
     DatabaseReference fornecedores;
-    DatabaseReference nomeFornecedor;
+
 
     //Lista
     private RecyclerView recyclerView;
-    private List<Filme> listaFilmes = new ArrayList<>();
+    private List<Fornecedor> listaFornecedores = new ArrayList<>();
 
 
     @Override
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity
         recyclerView = findViewById(R.id.recyclerView);
 
         //Configurar adapter
-        Adapter adapter = new Adapter( listaFilmes );
+        Adapter adapter = new Adapter( listaFornecedores );
 
         //Configurar Recyclerview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -99,20 +98,20 @@ public class MainActivity extends AppCompatActivity
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                Filme filme = listaFilmes.get( position );
+                                Fornecedor fornecedor = listaFornecedores.get( position );
                                 Toast.makeText(
                                         getApplicationContext(),
-                                        "Item pressionado: " + filme.getTituloFilme(),
+                                        "Item pressionado: " + fornecedor.getNomeFornecedor(),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
 
                             @Override
                             public void onLongItemClick(View view, int position) {
-                                Filme filme = listaFilmes.get( position );
+                                Fornecedor fornecedor = listaFornecedores.get( position );
                                 Toast.makeText(
                                         getApplicationContext(),
-                                        "Click longo: "  + filme.getTituloFilme(),
+                                        "Click longo: "  + fornecedor.getNomeFornecedor(),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
@@ -159,9 +158,6 @@ public class MainActivity extends AppCompatActivity
                                 buscaEdit = findViewById(R.id.busca_edit_id);
                                 pesquisar = findViewById(R.id.pesquisar_bt);
 
-
-
-
                                 pesquisar.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
@@ -171,12 +167,7 @@ public class MainActivity extends AppCompatActivity
                                         fornecedores = FirebaseDatabase.getInstance()
                                                 .getReference().child("fornecedores");
 
-                                        listaFilmes.clear();
-
-
-
-
-
+                                       listaFornecedores.clear();
 
                                         Query query1 = fornecedores.orderByChild("nomeFornecedor").equalTo(textoDigitadoLow).limitToFirst(10);
                                         query1.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -187,15 +178,15 @@ public class MainActivity extends AppCompatActivity
                                                         Fornecedor fornecedor = postSnapshot.getValue(Fornecedor.class);
                                                         String nomeFornecedor = fornecedor.getNomeFornecedor();
                                                         String enderecoFornecedor = fornecedor.getEnderecoFornecedor();
-                                                        String telefoneFornecedor = fornecedor.telefoneFornecedor;
-                                                        Filme filme = new Filme(nomeFornecedor, enderecoFornecedor, telefoneFornecedor);
-                                                        listaFilmes.add(filme);
+                                                        String telefoneFornecedor = fornecedor.getTelefoneFornecedor();
+                                                        String desconto = fornecedor.getDesconto();
+                                                        Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, desconto + " %");
+
+                                                        listaFornecedores.add(fornecedorRecycleView);
 
                                                     }
                                                 }
 
-                                                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                                                imm.hideSoftInputFromWindow(buscaEdit.getWindowToken(), 0);
                                             }
 
                                             @Override
@@ -203,7 +194,6 @@ public class MainActivity extends AppCompatActivity
 
                                             }
                                         });
-
 
                                     }
                                 });

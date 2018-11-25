@@ -4,15 +4,32 @@ public class Fornecedor {
     String nomeFornecedor;
     String enderecoFornecedor;
     String telefoneFornecedor;
+    String desconto;
+
     public Fornecedor() {
+    }
+
+    public Fornecedor(String nomeFornecedor, String telefoneFornecedor, String enderecoFornecedor, String desconto) {
+        this.nomeFornecedor = nomeFornecedor;
+        this.telefoneFornecedor = telefoneFornecedor;
+        this.enderecoFornecedor = enderecoFornecedor;
+        this.desconto = desconto;
     }
 
     public String getNomeFornecedor() {
         return nomeFornecedor;
     }
 
-    public void setNomeFornecedor(String nomeForncedor) {
-        this.nomeFornecedor = nomeForncedor;
+    public void setNomeFornecedor(String nomeFornecedor) {
+        this.nomeFornecedor = nomeFornecedor;
+    }
+
+    public String getTelefoneFornecedor() {
+        return telefoneFornecedor;
+    }
+
+    public void setTelefoneFornecedor(String telefoneFornecedor) {
+        this.telefoneFornecedor = telefoneFornecedor;
     }
 
     public String getEnderecoFornecedor() {
@@ -23,12 +40,12 @@ public class Fornecedor {
         this.enderecoFornecedor = enderecoFornecedor;
     }
 
-    public String getTelefoneFornecedor() {
-        return telefoneFornecedor;
+    public String getDesconto() {
+        return desconto;
     }
 
-    public void setTelefoneFornecedor(String telefoneFornecedor) {
-        this.telefoneFornecedor = telefoneFornecedor;
+    public void setDesconto(String desconto) {
+        this.desconto = desconto;
     }
 }
 

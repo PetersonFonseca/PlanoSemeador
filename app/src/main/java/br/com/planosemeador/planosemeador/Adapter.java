@@ -10,10 +10,10 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
-    private List<Filme> listaFilmes;
+    private List<Fornecedor> listaFornecedores;
 
-    public Adapter(List<Filme> lista) {
-        this.listaFilmes = lista;
+    public Adapter(List<Fornecedor> lista) {
+        this.listaFornecedores = lista;
     }
 
     @Override
@@ -28,30 +28,33 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        Filme filme = listaFilmes.get( position );
-        holder.titulo.setText( filme.getTituloFilme() );
-        holder.genero.setText( filme.getGenero() );
-        holder.ano.setText( filme.getAno() );
+        Fornecedor fornecedor = listaFornecedores.get( position );
+        holder.nomeFornecedor.setText( fornecedor.getNomeFornecedor() );
+        holder.telefoneFornecedor.setText( fornecedor.getTelefoneFornecedor() );
+        holder.enderecoFornecedor.setText( fornecedor.getEnderecoFornecedor() );
+        holder.desconto.setText( fornecedor.getDesconto() );
 
     }
 
     @Override
     public int getItemCount() {
-        return listaFilmes.size();
+        return listaFornecedores.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView titulo;
-        TextView ano;
-        TextView genero;
+        TextView nomeFornecedor;
+        TextView telefoneFornecedor;
+        TextView enderecoFornecedor;
+        TextView desconto;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            titulo = itemView.findViewById(R.id.textTitulo);
-            ano = itemView.findViewById(R.id.textAno);
-            genero = itemView.findViewById(R.id.textGenero);
+            nomeFornecedor = itemView.findViewById(R.id.nomeFornecedorId);
+            telefoneFornecedor = itemView.findViewById(R.id.telefoneFornecedorId);
+            enderecoFornecedor = itemView.findViewById(R.id.enderecoFornecedorId);
+            desconto = itemView.findViewById(R.id.descontoId);
 
         }
     }
