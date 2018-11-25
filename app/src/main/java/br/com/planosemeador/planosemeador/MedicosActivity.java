@@ -3,8 +3,7 @@ package br.com.planosemeador.planosemeador;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,10 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -48,7 +44,7 @@ public class MedicosActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_medicos);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -102,39 +98,7 @@ public class MedicosActivity extends AppCompatActivity
         recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
         recyclerView.setAdapter( adapter );
 
-        //evento de click
-        recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(
-                        getApplicationContext(),
-                        recyclerView,
-                        new RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Fornecedor fornecedor = listaFornecedores.get( position );
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "Item pressionado: " + fornecedor.getNomeFornecedor(),
-                                        Toast.LENGTH_SHORT
-                                ).show();
-                            }
 
-                            @Override
-                            public void onLongItemClick(View view, int position) {
-                                Fornecedor fornecedor = listaFornecedores.get( position );
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "Click longo: "  + fornecedor.getNomeFornecedor(),
-                                        Toast.LENGTH_SHORT
-                                ).show();
-                            }
-
-                            @Override
-                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                            }
-                        }
-                )
-        );
 
         //Lista Fim
 
@@ -203,5 +167,10 @@ public class MedicosActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

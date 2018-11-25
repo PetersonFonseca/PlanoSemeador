@@ -128,15 +128,6 @@ public class MainActivity extends AppCompatActivity
                                     }
                                 });
 
-
-
-
-
-
-
-
-
-
                             }else{
                                 //Ainda nao existe, entao inicializa um novo com as configurações padrão
                                 String telefoneUser = user.getPhoneNumber();

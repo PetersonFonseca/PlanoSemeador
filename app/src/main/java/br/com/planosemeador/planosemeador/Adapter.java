@@ -50,7 +50,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
             nomeFornecedor = itemView.findViewById(R.id.nomeFornecedorId);
             telefoneFornecedor = itemView.findViewById(R.id.telefoneFornecedorId);
             enderecoFornecedor = itemView.findViewById(R.id.enderecoFornecedorId);
