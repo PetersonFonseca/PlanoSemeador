@@ -58,7 +58,19 @@ public class MainActivity extends AppCompatActivity
     FirebaseUser user;
 
     //botoes navegacao
-    Button profissionaisDaSaudeBt;
+    Button medicos;
+    Button clinicas;
+    Button laboratorios;
+    Button farmacias;
+    Button dentistas;
+    Button oticas;
+    Button academias;
+    Button lojas;
+    Button cursos;
+
+
+
+    DatabaseReference db;
 
 
     @Override
@@ -96,18 +108,27 @@ public class MainActivity extends AppCompatActivity
                             if (dataSnapshot.exists()) {
                                 //Botões de navegação
 
-                                profissionaisDaSaudeBt = findViewById(R.id.botaoProfissionaisSaudeId);
-
-                                profissionaisDaSaudeBt.setOnClickListener(new View.OnClickListener() {
+                                medicos = findViewById(R.id.botaoProfissionaisSaudeId);
+                                medicos.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
+                                        String s = "clinico_geral";
+                                        Intent medicosIntent = new Intent(MainActivity.this, Main2Activity.class);
+                                        medicosIntent.putExtra("name", s);
+                                        startActivity(medicosIntent);
+                                        finish();
+                                    }
+                                });
 
-                                        String s = "Funciona";
+                                clinicas = findViewById(R.id.botaoProfissionaisSaudeId);
+                                clinicas.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "clinicas";
                                         Intent i = new Intent(MainActivity.this, Main2Activity.class);
                                         i.putExtra("name", s);
                                         startActivity(i);
-
-
+                                        finish();
                                     }
                                 });
 

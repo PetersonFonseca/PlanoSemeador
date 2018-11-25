@@ -38,10 +38,8 @@ public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //Busca
-    TextView buscaTextEdit;
-    EditText buscaEdit;
-    Button pesquisar;
     DatabaseReference fornecedores;
+    String j;
 
     //Lista
     private RecyclerView recyclerView;
@@ -59,30 +57,19 @@ public class Main2Activity extends AppCompatActivity
 
         if(b!=null)
         {
-            String j =(String) b.get("name");
-            TextView t = findViewById(R.id.text_id);
-            t.setText(j);
+            j = (String) b.get("name");
         }
 
 
         // Inicio Busca
-        buscaTextEdit = findViewById(R.id.busca_text_id);
-        buscaEdit = findViewById(R.id.busca_edit_id);
-        pesquisar = findViewById(R.id.pesquisar_bt);
-
-        pesquisar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String textoDigitado = buscaEdit.getText().toString();
-                String textoDigitadoLow = textoDigitado.toLowerCase();
 
                 fornecedores = FirebaseDatabase.getInstance()
                         .getReference().child("fornecedores");
 
                 listaFornecedores.clear();
 
-                Query query1 = fornecedores.orderByChild("nomeFornecedor").equalTo(textoDigitadoLow).limitToFirst(10);
-                query1.addListenerForSingleValueEvent(new ValueEventListener() {
+                Query query2 = fornecedores.orderByChild("categoria").equalTo(j).limitToFirst(30);
+                query2.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()){
@@ -95,10 +82,8 @@ public class Main2Activity extends AppCompatActivity
                                 Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, desconto + " %");
 
                                 listaFornecedores.add(fornecedorRecycleView);
-
                             }
                         }
-
                     }
 
                     @Override
@@ -107,8 +92,7 @@ public class Main2Activity extends AppCompatActivity
                     }
                 });
 
-            }
-        });
+
 
         //Fim Busca
 
@@ -161,14 +145,6 @@ public class Main2Activity extends AppCompatActivity
         );
 
         //Lista Fim
-
-
-
-
-
-
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
