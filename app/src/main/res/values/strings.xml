@@ -11,4 +11,5 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_medicos">MedicosActivity</string>
     <string name="title_activity_clinicas">ClinicasActivity</string>
+    <string name="title_activity_laboratorios">LaboratoriosActivity</string>
 </resources>

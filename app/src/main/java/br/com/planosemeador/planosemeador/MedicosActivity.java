@@ -70,6 +70,8 @@ public class MedicosActivity extends AppCompatActivity
                         Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, desconto + " %");
 
                         listaFornecedores.add(fornecedorRecycleView);
+
+                        Toast.makeText(getApplicationContext(), "entrou no loop", Toast.LENGTH_LONG).show();
                     }
                 }
             }
@@ -125,7 +127,7 @@ public class MedicosActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main2, menu);
+        getMenuInflater().inflate(R.menu.medicos, menu);
         return true;
     }
 

@@ -38,6 +38,10 @@
         <activity
             android:name=".ClinicasActivity"
             android:label="@string/title_activity_clinicas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LaboratoriosActivity"
+            android:label="@string/title_activity_laboratorios"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
