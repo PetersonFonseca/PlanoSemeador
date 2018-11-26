@@ -40,13 +40,27 @@ public class MedicosActivity extends AppCompatActivity
     //Lista
     private RecyclerView recyclerView;
     private List<Fornecedor> listaFornecedores = new ArrayList<>();
+    Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicos);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Lista inicio
+
+        recyclerView = findViewById(R.id.recyclerView);
+
+        //Configurar adapter
+        adapter = new Adapter( listaFornecedores );
+
+        //Configurar Recyclerview
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
 
 
         // Inicio Busca
@@ -73,6 +87,7 @@ public class MedicosActivity extends AppCompatActivity
 
                         Toast.makeText(getApplicationContext(), "entrou no loop", Toast.LENGTH_LONG).show();
                     }
+                    recyclerView.setAdapter( adapter );
                 }
             }
 
@@ -81,24 +96,6 @@ public class MedicosActivity extends AppCompatActivity
 
             }
         });
-
-
-
-        //Fim Busca
-
-        //Lista inicio
-
-        recyclerView = findViewById(R.id.recyclerView);
-
-        //Configurar adapter
-        Adapter adapter = new Adapter( listaFornecedores );
-
-        //Configurar Recyclerview
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
-        recyclerView.setAdapter( adapter );
 
 
 
