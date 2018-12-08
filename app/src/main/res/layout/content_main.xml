@@ -43,7 +43,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/id3"
+                android:id="@+id/laboratoriosBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Laboratórios"

@@ -119,6 +119,30 @@ public class MainActivity extends AppCompatActivity
                                     }
                                 });
 
+                                clinicas = findViewById(R.id.clinicasBtId);
+                                clinicas.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "clinicas";
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
+                                laboratorios = findViewById(R.id.laboratoriosBtId);
+                                laboratorios.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "laboratorios";
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
 
 
                             }else{
