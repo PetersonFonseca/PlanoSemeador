@@ -143,6 +143,80 @@ public class MainActivity extends AppCompatActivity
                                     }
                                 });
 
+                                farmacias = findViewById(R.id.farmaciasBtId);
+                                farmacias.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "farmacias";
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
+                                dentistas = findViewById(R.id.dentistasBtId);
+                                dentistas.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "dentistas";
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
+                                oticas = findViewById(R.id.oticasBtId);
+                                oticas.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "oticas";
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
+                                academias = findViewById(R.id.academiasBtId);
+                                academias.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "academias";
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
+                                lojas = findViewById(R.id.lojasBtId);
+                                lojas.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "lojas";
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
+                                cursos = findViewById(R.id.cursosBtId);
+                                cursos.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "cursos";
+                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
+
+
 
 
                             }else{

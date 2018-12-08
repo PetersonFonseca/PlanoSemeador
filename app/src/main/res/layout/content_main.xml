@@ -60,7 +60,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/id4"
+                android:id="@+id/farmaciasBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Farmácias"
@@ -70,7 +70,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/id5"
+                android:id="@+id/dentistasBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Dentistas"
@@ -80,7 +80,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/id6"
+                android:id="@+id/oticasBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Óticas"
@@ -97,7 +97,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/id7"
+                android:id="@+id/academiasBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Academias"
@@ -107,7 +107,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/id8"
+                android:id="@+id/lojasBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Lojas"
@@ -117,7 +117,7 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/id9"
+                android:id="@+id/cursosBtId"
                 android:drawableTop="@drawable/ic_menu_gallery"
                 android:background="@drawable/bota_arredondado"
                 android:text="Cursos"
