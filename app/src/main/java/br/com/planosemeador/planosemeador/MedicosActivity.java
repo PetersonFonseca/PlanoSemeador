@@ -49,6 +49,13 @@ public class MedicosActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Intent iin= getIntent();
+        Bundle b = iin.getExtras();
+        if(b!=null)
+        {
+            j = (String) b.get("name");
+        }
+
         //Lista inicio!
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -70,7 +77,7 @@ public class MedicosActivity extends AppCompatActivity
 
         listaFornecedores.clear();
 
-        Query query2 = fornecedores.orderByChild("categoria").equalTo("clinico_geral").limitToFirst(30);
+        Query query2 = fornecedores.orderByChild("categoria").equalTo(j).limitToFirst(30);
         query2.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -85,7 +92,6 @@ public class MedicosActivity extends AppCompatActivity
 
                         listaFornecedores.add(fornecedorRecycleView);
 
-                        Toast.makeText(getApplicationContext(), "entrou no loop", Toast.LENGTH_LONG).show();
                     }
                     recyclerView.setAdapter( adapter );
                 }

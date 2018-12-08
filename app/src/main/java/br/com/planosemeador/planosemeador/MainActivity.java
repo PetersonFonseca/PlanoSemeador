@@ -111,21 +111,15 @@ public class MainActivity extends AppCompatActivity
                                 medicos.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
+                                        String s = "medicos";
                                         Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
                                     }
                                 });
 
-                                clinicas = findViewById(R.id.clinicasBtId);
-                                clinicas.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        Intent intent = new Intent(MainActivity.this, ClinicasActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                });
+
 
                             }else{
                                 //Ainda nao existe, entao inicializa um novo com as configurações padrão
