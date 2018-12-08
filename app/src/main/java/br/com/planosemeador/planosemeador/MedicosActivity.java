@@ -49,7 +49,7 @@ public class MedicosActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Lista inicio
+        //Lista inicio!
 
         recyclerView = findViewById(R.id.recyclerView);
 
