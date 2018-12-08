@@ -49,6 +49,8 @@ public class MedicosActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        setTitle("Plano Semeador");
+
         Intent iin= getIntent();
         Bundle b = iin.getExtras();
         if(b!=null)
@@ -114,6 +116,7 @@ public class MedicosActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -155,17 +158,19 @@ public class MedicosActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.main_activity_menu) {
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+            finish();
+        } else if (id == R.id.como_funciona) {
+            Intent i = new Intent(getApplicationContext(), ComoFuncionaActivity.class);
+            startActivity(i);
+            finish();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.sobre_nos) {
+            Intent i = new Intent(getApplicationContext(), SobreNosActivity.class);
+            startActivity(i);
+            finish();
 
         }
 

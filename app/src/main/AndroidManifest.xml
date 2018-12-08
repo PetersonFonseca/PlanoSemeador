@@ -40,10 +40,6 @@
             android:name=".MedicosActivity"
             android:label="@string/title_activity_medicos"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ClinicasActivity"
-            android:label="@string/title_activity_clinicas"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
