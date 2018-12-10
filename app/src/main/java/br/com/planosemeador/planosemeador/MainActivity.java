@@ -67,11 +67,6 @@ public class MainActivity extends AppCompatActivity
     Button lojas;
     Button cursos;
 
-
-
-    DatabaseReference db;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -252,8 +247,6 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
-
     @Override
     protected void onStop(){
         super.onStop();
@@ -317,7 +310,6 @@ public class MainActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), SobreNosActivity.class);
             startActivity(i);
             finish();
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

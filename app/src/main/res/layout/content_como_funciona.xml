@@ -8,9 +8,13 @@
     tools:context=".ComoFuncionaActivity"
     tools:showIn="@layout/app_bar_como_funciona">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/como_funciona_color"
         android:orientation="vertical">
 
@@ -19,15 +23,31 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:text="Apenas R$25,00 por mês"
-            android:layout_gravity="center_horizontal"/>
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/como_funciona"
-            android:scaleType="fitStart"/>
+            android:src="@drawable/como_funciona"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="Você e mais 9 familiares tem direito a descontos em Médicos, Laboratórios, Farmácias, Dentistas, Óticas, Academias e Lojas conveniadas."
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
 
     </LinearLayout>
+
+    </ScrollView>
 
 
 
