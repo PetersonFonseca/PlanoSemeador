@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "clinicas";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "laboratorios";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "farmacias";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "dentistas";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "oticas";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "academias";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "lojas";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
@@ -211,16 +211,12 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "cursos";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();
                                     }
                                 });
-
-
-
-
 
                             }else{
                                 //Ainda nao existe, entao inicializa um novo com as configurações padrão
