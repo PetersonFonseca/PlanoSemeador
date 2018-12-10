@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "medicos";
-                                        Intent intent = new Intent(MainActivity.this, MedicosActivity.class);
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
                                         finish();

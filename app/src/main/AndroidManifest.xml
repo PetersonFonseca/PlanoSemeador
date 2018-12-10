@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -37,9 +36,9 @@
             android:label="@string/title_activity_sobre_nos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MedicosActivity"
-            android:label="@string/title_activity_medicos"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".ResultadoDaBuscaActivity"
+            android:label="@string/title_activity_resultado_da_busca"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

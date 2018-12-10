@@ -8,4 +8,27 @@
     tools:context=".ComoFuncionaActivity"
     tools:showIn="@layout/app_bar_como_funciona">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/como_funciona_color"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="Apenas R$25,00 por mês"
+            android:layout_gravity="center_horizontal"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/como_funciona"
+            android:scaleType="fitStart"/>
+
+    </LinearLayout>
+
+
+
 </android.support.constraint.ConstraintLayout>

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MedicosActivity"
-    tools:showIn="@layout/app_bar_medicos">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ResultadoDaBuscaActivity"
+    tools:showIn="@layout/app_bar_resultado_da_busca">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"/>
 
 </android.support.constraint.ConstraintLayout>

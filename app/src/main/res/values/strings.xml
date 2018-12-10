@@ -12,4 +12,6 @@
     <string name="title_activity_medicos">MedicosActivity</string>
     <string name="title_activity_clinicas">ClinicasActivity</string>
     <string name="title_activity_laboratorios">LaboratoriosActivity</string>
+    <string name="title_activity_texte">TexteActivity</string>
+    <string name="title_activity_resultado_da_busca">ResultadoDaBuscaActivity</string>
 </resources>
