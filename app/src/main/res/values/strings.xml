@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PlanoSemeador</string>
+    <string name="app_name">Plano Semeador</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -14,4 +14,5 @@
     <string name="title_activity_laboratorios">LaboratoriosActivity</string>
     <string name="title_activity_texte">TexteActivity</string>
     <string name="title_activity_resultado_da_busca">ResultadoDaBuscaActivity</string>
+    <string name="textoSobreNos"></string>
 </resources>

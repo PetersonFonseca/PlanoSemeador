@@ -7,5 +7,105 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".SobreNosActivity"
     tools:showIn="@layout/app_bar_sobre_nos">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="@string/textoSobreNos"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/joao"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50px"
+                android:layout_marginBottom="15px"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="João da Crus Filho - Fundador"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/emanuel"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50px"
+                android:layout_marginBottom="15px"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Emanuel Giffoni - Administrador"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/jeser"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50px"
+                android:layout_marginBottom="15px"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Jeser Giffoni - Administrador"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

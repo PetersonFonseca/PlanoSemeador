@@ -7,5 +7,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="tamanho_botao">110dp</dimen>
     <dimen name="margem_botao">5dp</dimen>
-    <dimen name="letra_botao">11dp</dimen>
+    <dimen name="letra_botao">10dp</dimen>
 </resources>

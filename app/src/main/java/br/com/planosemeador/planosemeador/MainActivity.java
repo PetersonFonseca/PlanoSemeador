@@ -66,6 +66,12 @@ public class MainActivity extends AppCompatActivity
     Button academias;
     Button lojas;
     Button cursos;
+    Button despachantes;
+    Button restaurantes;
+    Button veterinarios;
+    Button gaseagua;
+    Button lavarapido;
+    Button beleza;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,7 +163,7 @@ public class MainActivity extends AppCompatActivity
                                 dentistas.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        String s = "dentistas";
+                                        String s = "odontologia";
                                         Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
@@ -206,6 +212,72 @@ public class MainActivity extends AppCompatActivity
                                     @Override
                                     public void onClick(View view) {
                                         String s = "cursos";
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+                                despachantes = findViewById(R.id.despachantesBtId);
+                                despachantes.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "despachantes";
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+                                restaurantes = findViewById(R.id.restaurantesBtId);
+                                restaurantes.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "restaurantes";
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+                                veterinarios = findViewById(R.id.veterinariosBtId);
+                                veterinarios.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "veterinarios";
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+                                gaseagua = findViewById(R.id.gasAguaBtId);
+                                gaseagua.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "gaseagua";
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+                                lavarapido = findViewById(R.id.lavaRapidoBtId);
+                                lavarapido.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "lavarapido";
+                                        Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
+                                        intent.putExtra("name", s);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+                                beleza = findViewById(R.id.belezaBtId);
+                                beleza.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String s = "beleza";
                                         Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);

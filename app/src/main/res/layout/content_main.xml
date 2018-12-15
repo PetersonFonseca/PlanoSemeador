@@ -8,11 +8,14 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,6 +129,82 @@
                 android:textSize="@dimen/letra_botao"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <Button
+                android:layout_width="@dimen/tamanho_botao"
+                android:layout_height="wrap_content"
+                android:id="@+id/despachantesBtId"
+                android:drawableTop="@mipmap/despachantes"
+                android:background="@drawable/bota_arredondado"
+                android:text="Despachantes"
+                android:textColor="#FFFFFF"
+                android:layout_margin="@dimen/margem_botao"
+                android:textSize="@dimen/letra_botao"/>
+            <Button
+                android:layout_width="@dimen/tamanho_botao"
+                android:layout_height="wrap_content"
+                android:id="@+id/restaurantesBtId"
+                android:drawableTop="@mipmap/restaurante"
+                android:background="@drawable/bota_arredondado"
+                android:text="Restaurantes"
+                android:textColor="#FFFFFF"
+                android:layout_margin="@dimen/margem_botao"
+                android:textSize="@dimen/letra_botao"/>
+            <Button
+                android:layout_width="@dimen/tamanho_botao"
+                android:layout_height="wrap_content"
+                android:id="@+id/veterinariosBtId"
+                android:drawableTop="@mipmap/veterinario"
+                android:background="@drawable/bota_arredondado"
+                android:text="Veterinários"
+                android:textColor="#FFFFFF"
+                android:layout_margin="@dimen/margem_botao"
+                android:textSize="@dimen/letra_botao"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <Button
+                android:layout_width="@dimen/tamanho_botao"
+                android:layout_height="wrap_content"
+                android:id="@+id/gasAguaBtId"
+                android:drawableTop="@mipmap/gas_e_agua"
+                android:background="@drawable/bota_arredondado"
+                android:text="Gás e Água"
+                android:textColor="#FFFFFF"
+                android:layout_margin="@dimen/margem_botao"
+                android:textSize="@dimen/letra_botao"/>
+            <Button
+                android:layout_width="@dimen/tamanho_botao"
+                android:layout_height="wrap_content"
+                android:id="@+id/lavaRapidoBtId"
+                android:drawableTop="@mipmap/lava_rapido"
+                android:background="@drawable/bota_arredondado"
+                android:text="Lava Rápido"
+                android:textColor="#FFFFFF"
+                android:layout_margin="@dimen/margem_botao"
+                android:textSize="@dimen/letra_botao"/>
+            <Button
+                android:layout_width="@dimen/tamanho_botao"
+                android:layout_height="wrap_content"
+                android:id="@+id/belezaBtId"
+                android:drawableTop="@mipmap/beleza"
+                android:background="@drawable/bota_arredondado"
+                android:text="Beleza"
+                android:textColor="#FFFFFF"
+                android:layout_margin="@dimen/margem_botao"
+                android:textSize="@dimen/letra_botao"/>
+        </LinearLayout>
+
+
     </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
