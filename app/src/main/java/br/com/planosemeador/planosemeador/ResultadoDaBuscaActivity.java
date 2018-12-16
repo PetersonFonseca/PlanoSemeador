@@ -167,7 +167,6 @@ public class ResultadoDaBuscaActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), ComoFuncionaActivity.class);
             startActivity(i);
             finish();
-
         } else if (id == R.id.sobre_nos) {
             Intent i = new Intent(getApplicationContext(), SobreNosActivity.class);
             startActivity(i);
