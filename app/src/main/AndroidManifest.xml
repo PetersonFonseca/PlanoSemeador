@@ -38,6 +38,22 @@
         <activity
             android:name=".ResultadoDaBuscaActivity"
             android:label="@string/title_activity_resultado_da_busca"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BrasopolisActivity"
+            android:label="@string/title_activity_brasopolis"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PiranguinhoActivity"
+            android:label="@string/title_activity_piranguinho"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MariaDaFeActivity"
+            android:label="@string/title_activity_maria_da_fe"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DelfimMoreiraActivity"
+            android:label="@string/title_activity_delfim_moreira"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

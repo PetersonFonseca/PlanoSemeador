@@ -172,7 +172,22 @@ public class ResultadoDaBuscaActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), SobreNosActivity.class);
             startActivity(i);
             finish();
-
+        }else if (id == R.id.brasopolis_menu) {
+            Intent i = new Intent(getApplicationContext(), BrasopolisActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.piranguinho_menu) {
+            Intent i = new Intent(getApplicationContext(), PiranguinhoActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.maria_da_fe_menu) {
+            Intent i = new Intent(getApplicationContext(), MariaDaFeActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.delfim_moreira_menu) {
+            Intent i = new Intent(getApplicationContext(), DelfimMoreiraActivity.class);
+            startActivity(i);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

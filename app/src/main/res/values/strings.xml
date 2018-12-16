@@ -15,4 +15,8 @@
     <string name="title_activity_texte">TexteActivity</string>
     <string name="title_activity_resultado_da_busca">ResultadoDaBuscaActivity</string>
     <string name="textoSobreNos"></string>
+    <string name="title_activity_brasopolis">BrasopolisActivity</string>
+    <string name="title_activity_piranguinho">PiranguinhoActivity</string>
+    <string name="title_activity_maria_da_fe">MariaDaFeActivity</string>
+    <string name="title_activity_delfim_moreira">DelfimMoreiraActivity</string>
 </resources>

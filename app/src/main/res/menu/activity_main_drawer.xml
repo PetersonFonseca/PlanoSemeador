@@ -7,7 +7,23 @@
         <item
             android:id="@+id/main_activity_menu"
             android:icon="@mipmap/inicio"
-            android:title="Início" />
+            android:title="Itajubá" />
+        <item
+            android:id="@+id/brasopolis_menu"
+            android:icon="@mipmap/inicio"
+            android:title="Brasópolis" />
+        <item
+            android:id="@+id/piranguinho_menu"
+            android:icon="@mipmap/inicio"
+            android:title="Piranguinho" />
+        <item
+            android:id="@+id/maria_da_fe_menu"
+            android:icon="@mipmap/inicio"
+            android:title="Maria da Fé" />
+        <item
+            android:id="@+id/delfim_moreira_menu"
+            android:icon="@mipmap/inicio"
+            android:title="Delfim Moreira" />
         <item
             android:id="@+id/como_funciona"
             android:icon="@mipmap/como_funciona"

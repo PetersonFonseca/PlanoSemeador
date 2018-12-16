@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity
     Button oticas;
     Button academias;
     Button lojas;
-    Button cursos;
+    Button diversos;
     Button despachantes;
     Button restaurantes;
     Button veterinarios;
@@ -207,11 +207,11 @@ public class MainActivity extends AppCompatActivity
                                     }
                                 });
 
-                                cursos = findViewById(R.id.cursosBtId);
-                                cursos.setOnClickListener(new View.OnClickListener() {
+                                diversos = findViewById(R.id.diversosBtId);
+                                diversos.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        String s = "cursos";
+                                        String s = "diversos";
                                         Intent intent = new Intent(MainActivity.this, ResultadoDaBuscaActivity.class);
                                         intent.putExtra("name", s);
                                         startActivity(intent);
@@ -380,6 +380,22 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.sobre_nos) {
             Intent i = new Intent(getApplicationContext(), SobreNosActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.brasopolis_menu) {
+            Intent i = new Intent(getApplicationContext(), BrasopolisActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.piranguinho_menu) {
+            Intent i = new Intent(getApplicationContext(), PiranguinhoActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.maria_da_fe_menu) {
+            Intent i = new Intent(getApplicationContext(), MariaDaFeActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.delfim_moreira_menu) {
+            Intent i = new Intent(getApplicationContext(), DelfimMoreiraActivity.class);
             startActivity(i);
             finish();
         }

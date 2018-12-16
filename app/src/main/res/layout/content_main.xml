@@ -120,10 +120,10 @@
             <Button
                 android:layout_width="@dimen/tamanho_botao"
                 android:layout_height="wrap_content"
-                android:id="@+id/cursosBtId"
-                android:drawableTop="@mipmap/cursos"
+                android:id="@+id/diversosBtId"
+                android:drawableTop="@mipmap/diversos"
                 android:background="@drawable/bota_arredondado"
-                android:text="Cursos"
+                android:text="Diversos"
                 android:textColor="#FFFFFF"
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
