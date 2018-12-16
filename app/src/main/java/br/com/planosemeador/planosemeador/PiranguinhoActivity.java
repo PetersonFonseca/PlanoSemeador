@@ -24,7 +24,7 @@ public class PiranguinhoActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Plano Semeador");
+        setTitle("Semeador - Piranguinho");
 
 
 

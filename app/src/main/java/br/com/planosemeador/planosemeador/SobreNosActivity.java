@@ -24,7 +24,7 @@ public class SobreNosActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Plano Semeador");
+        setTitle("Sobre nós");
 
 
 

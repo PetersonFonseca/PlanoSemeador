@@ -48,7 +48,7 @@ public class ResultadoDaBuscaActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Plano Semeador");
+        setTitle("Resultado da busca");
 
         Intent iin= getIntent();
         Bundle b = iin.getExtras();

@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Plano Semeador");
+        setTitle("Semeador - Itajubá");
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

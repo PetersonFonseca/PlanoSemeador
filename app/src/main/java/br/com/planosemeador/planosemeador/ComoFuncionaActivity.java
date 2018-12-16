@@ -24,7 +24,7 @@ public class ComoFuncionaActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Plano Semeador");
+        setTitle("Como Funciona");
 
 
 
