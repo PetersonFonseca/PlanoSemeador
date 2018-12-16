@@ -8,4 +8,10 @@
     tools:context=".DelfimMoreiraActivity"
     tools:showIn="@layout/app_bar_delfim_moreira">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"/>
+
 </android.support.constraint.ConstraintLayout>
