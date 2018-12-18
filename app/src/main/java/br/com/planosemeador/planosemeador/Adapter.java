@@ -32,6 +32,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         holder.nomeFornecedor.setText( fornecedor.getNomeFornecedor() );
         holder.telefoneFornecedor.setText( fornecedor.getTelefoneFornecedor() );
         holder.enderecoFornecedor.setText( fornecedor.getEnderecoFornecedor() );
+        holder.subcategoria.setText(fornecedor.getSubcategoria());
         holder.desconto.setText( fornecedor.getDesconto() );
 
     }
@@ -46,6 +47,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         TextView nomeFornecedor;
         TextView telefoneFornecedor;
         TextView enderecoFornecedor;
+        TextView subcategoria;
         TextView desconto;
 
         public MyViewHolder(View itemView) {
@@ -53,6 +55,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             nomeFornecedor = itemView.findViewById(R.id.nomeFornecedorId);
             telefoneFornecedor = itemView.findViewById(R.id.telefoneFornecedorId);
             enderecoFornecedor = itemView.findViewById(R.id.enderecoFornecedorId);
+            subcategoria = itemView.findViewById(R.id.subcategoriaId);
             desconto = itemView.findViewById(R.id.descontoId);
 
         }

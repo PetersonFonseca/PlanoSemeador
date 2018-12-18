@@ -89,7 +89,8 @@ public class ResultadoDaBuscaActivity extends AppCompatActivity
                         String enderecoFornecedor = fornecedor.getEnderecoFornecedor();
                         String telefoneFornecedor = fornecedor.getTelefoneFornecedor();
                         String desconto = fornecedor.getDesconto();
-                        Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, desconto + " %");
+                        String subcategoria = fornecedor.getSubcategoria();
+                        Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, subcategoria, desconto );
 
                         listaFornecedores.add(fornecedorRecycleView);
 
@@ -167,6 +168,7 @@ public class ResultadoDaBuscaActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), ComoFuncionaActivity.class);
             startActivity(i);
             finish();
+
         } else if (id == R.id.sobre_nos) {
             Intent i = new Intent(getApplicationContext(), SobreNosActivity.class);
             startActivity(i);

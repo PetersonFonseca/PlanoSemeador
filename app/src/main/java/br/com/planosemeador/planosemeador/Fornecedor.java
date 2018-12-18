@@ -4,15 +4,17 @@ public class Fornecedor {
     String nomeFornecedor;
     String enderecoFornecedor;
     String telefoneFornecedor;
+    String subcategoria;
     String desconto;
 
     public Fornecedor() {
     }
 
-    public Fornecedor(String nomeFornecedor, String telefoneFornecedor, String enderecoFornecedor, String desconto) {
+    public Fornecedor(String nomeFornecedor, String telefoneFornecedor, String enderecoFornecedor, String subcategoria, String desconto) {
         this.nomeFornecedor = nomeFornecedor;
         this.telefoneFornecedor = telefoneFornecedor;
         this.enderecoFornecedor = enderecoFornecedor;
+        this.subcategoria = subcategoria;
         this.desconto = desconto;
     }
 
@@ -40,6 +42,14 @@ public class Fornecedor {
         this.enderecoFornecedor = enderecoFornecedor;
     }
 
+    public String getSubcategoria() {
+        return subcategoria;
+    }
+
+    public void setSubcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
+    }
+
     public String getDesconto() {
         return desconto;
     }
@@ -47,5 +57,7 @@ public class Fornecedor {
     public void setDesconto(String desconto) {
         this.desconto = desconto;
     }
+
+
 }
 

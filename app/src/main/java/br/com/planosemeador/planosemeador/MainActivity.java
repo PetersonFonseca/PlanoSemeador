@@ -2,11 +2,14 @@ package br.com.planosemeador.planosemeador;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -73,6 +76,10 @@ public class MainActivity extends AppCompatActivity
     Button lavarapido;
     Button beleza;
 
+    //Alerta
+    private AlertDialog alerta;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +88,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         setTitle("Semeador - Itajubá");
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -329,6 +338,54 @@ public class MainActivity extends AppCompatActivity
     protected void onStart(){
         super.onStart();
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        verificaConexao();
+    }
+
+    public  boolean verificaConexao() {
+        boolean conectado;
+        ConnectivityManager conectivtyManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (conectivtyManager.getActiveNetworkInfo() != null
+                && conectivtyManager.getActiveNetworkInfo().isAvailable()
+                && conectivtyManager.getActiveNetworkInfo().isConnected()) {
+            conectado = true;
+            //Toast.makeText(getApplicationContext(), "Tem internet", Toast.LENGTH_SHORT).show();
+
+        } else {
+            conectado = false;
+            avisoSemInternet();
+        }
+        return conectado;
+    }
+
+    public void avisoSemInternet() {
+        //Cria o gerador do AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //define o titulo
+        builder.setTitle("Falha na conexão com a internet");
+        //define a mensagem
+        builder.setMessage("Para usar este aplicativo ative a internet.");
+        //define um botão como positivo
+        builder.setPositiveButton("Fechar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                finish();
+                System.exit(0);
+            }
+        });
+//        //define um botão como negativo.
+//        builder.setNegativeButton("Negativo", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface arg0, int arg1) {
+//                Toast.makeText(MainActivity.this, "negativo=" + arg1, Toast.LENGTH_SHORT).show();
+//            }
+//        });
+        //cria o AlertDialog
+        alerta = builder.create();
+        //Exibe
+        alerta.show();
     }
 
     @Override

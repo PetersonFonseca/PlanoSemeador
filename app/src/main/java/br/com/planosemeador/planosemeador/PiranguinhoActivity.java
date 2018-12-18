@@ -81,7 +81,8 @@ public class PiranguinhoActivity extends AppCompatActivity
                         String enderecoFornecedor = fornecedor.getEnderecoFornecedor();
                         String telefoneFornecedor = fornecedor.getTelefoneFornecedor();
                         String desconto = fornecedor.getDesconto();
-                        Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, desconto + " %");
+                        String subcategoria = fornecedor.getSubcategoria();
+                        Fornecedor fornecedorRecycleView = new Fornecedor( nomeFornecedor, "Tel: " +telefoneFornecedor, "Endereço: " + enderecoFornecedor, subcategoria, desconto );
 
                         listaFornecedores.add(fornecedorRecycleView);
 
