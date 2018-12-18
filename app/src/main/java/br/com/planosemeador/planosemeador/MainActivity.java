@@ -89,9 +89,6 @@ public class MainActivity extends AppCompatActivity
 
         setTitle("Semeador - Itajubá");
 
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -111,14 +108,6 @@ public class MainActivity extends AppCompatActivity
                 user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     //Usuario Logado
-                    usuarioIdNoDb = user.getUid();
-                    noDoUsuario = FirebaseDatabase.getInstance().getReference().child("usuarios").child(usuarioIdNoDb);
-                    noDoUsuario.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            //texta se o usuario ja existe
-                            if (dataSnapshot.exists()) {
-                                //Botões de navegação
 
                                 medicos = findViewById(R.id.medicosBtId);
                                 medicos.setOnClickListener(new View.OnClickListener() {
@@ -294,22 +283,7 @@ public class MainActivity extends AppCompatActivity
                                     }
                                 });
 
-                            }else{
-                                //Ainda nao existe, entao inicializa um novo com as configurações padrão
-                                String telefoneUser = user.getPhoneNumber();
-                                usuario = new Usuario();
-                                usuario.setNomeUsuario("Cliente");
-                                usuario.setTelefoneUsuario(telefoneUser);
-                                noDoUsuario.setValue(usuario);
-                                FirebaseMessaging.getInstance().subscribeToTopic("planoSemeador");
-                            }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
                 } else {
                     //user is signed out
                     startActivityForResult(
@@ -401,7 +375,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        //getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 

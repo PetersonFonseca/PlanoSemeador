@@ -24,8 +24,9 @@
             android:gravity="center_horizontal"
             android:layout_marginTop="10dp">
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/medicosBtId"
                 android:drawableTop="@mipmap/medico"
                 android:background="@drawable/bota_arredondado"
@@ -34,8 +35,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/clinicasBtId"
                 android:drawableTop="@mipmap/clinica"
                 android:background="@drawable/bota_arredondado"
@@ -44,8 +46,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/laboratoriosBtId"
                 android:drawableTop="@mipmap/laboratorio"
                 android:background="@drawable/bota_arredondado"
@@ -61,8 +64,9 @@
             android:orientation="horizontal"
             android:gravity="center_horizontal">
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/farmaciasBtId"
                 android:drawableTop="@mipmap/farmacia"
                 android:background="@drawable/bota_arredondado"
@@ -71,8 +75,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/dentistasBtId"
                 android:drawableTop="@mipmap/dentista"
                 android:background="@drawable/bota_arredondado"
@@ -81,8 +86,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/oticasBtId"
                 android:drawableTop="@mipmap/otica"
                 android:background="@drawable/bota_arredondado"
@@ -98,8 +104,9 @@
             android:orientation="horizontal"
             android:gravity="center_horizontal">
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/academiasBtId"
                 android:drawableTop="@mipmap/academia"
                 android:background="@drawable/bota_arredondado"
@@ -108,8 +115,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/lojasBtId"
                 android:drawableTop="@mipmap/loja"
                 android:background="@drawable/bota_arredondado"
@@ -118,8 +126,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/diversosBtId"
                 android:drawableTop="@mipmap/diversos"
                 android:background="@drawable/bota_arredondado"
@@ -135,8 +144,9 @@
             android:orientation="horizontal"
             android:gravity="center_horizontal">
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/despachantesBtId"
                 android:drawableTop="@mipmap/despachantes"
                 android:background="@drawable/bota_arredondado"
@@ -145,8 +155,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/restaurantesBtId"
                 android:drawableTop="@mipmap/restaurante"
                 android:background="@drawable/bota_arredondado"
@@ -155,8 +166,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/veterinariosBtId"
                 android:drawableTop="@mipmap/veterinario"
                 android:background="@drawable/bota_arredondado"
@@ -172,8 +184,9 @@
             android:orientation="horizontal"
             android:gravity="center_horizontal">
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/gasAguaBtId"
                 android:drawableTop="@mipmap/gas_e_agua"
                 android:background="@drawable/bota_arredondado"
@@ -182,8 +195,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/lavaRapidoBtId"
                 android:drawableTop="@mipmap/lava_rapido"
                 android:background="@drawable/bota_arredondado"
@@ -192,8 +206,9 @@
                 android:layout_margin="@dimen/margem_botao"
                 android:textSize="@dimen/letra_botao"/>
             <Button
-                android:layout_width="@dimen/tamanho_botao"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:id="@+id/belezaBtId"
                 android:drawableTop="@mipmap/beleza"
                 android:background="@drawable/bota_arredondado"
