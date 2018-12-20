@@ -75,18 +75,39 @@ public class AssistenciaActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.main_activity_menu) {
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+            finish();
+        } else if (id == R.id.como_funciona) {
+            Intent i = new Intent(getApplicationContext(), ComoFuncionaActivity.class);
+            startActivity(i);
+            finish();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.sobre_nos) {
+            Intent i = new Intent(getApplicationContext(), SobreNosActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.brasopolis_menu) {
+            Intent i = new Intent(getApplicationContext(), BrasopolisActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.piranguinho_menu) {
+            Intent i = new Intent(getApplicationContext(), PiranguinhoActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.maria_da_fe_menu) {
+            Intent i = new Intent(getApplicationContext(), MariaDaFeActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.delfim_moreira_menu) {
+            Intent i = new Intent(getApplicationContext(), DelfimMoreiraActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.assitencia) {
+            Intent i = new Intent(getApplicationContext(), AssistenciaActivity.class);
+            startActivity(i);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

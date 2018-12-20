@@ -27,7 +27,7 @@
         <item
             android:id="@+id/assitencia"
             android:icon="@mipmap/assistencia"
-            android:title="Assistência Funeral Completa" />
+            android:title="Assist. Funeral Completa" />
         <item
             android:id="@+id/como_funciona"
             android:icon="@mipmap/como_funciona"
