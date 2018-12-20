@@ -14,19 +14,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ComoFuncionaActivity extends AppCompatActivity
+public class AssistenciaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_como_funciona);
+        setContentView(R.layout.activity_assistencia);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        setTitle("Como Funciona");
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -54,7 +50,7 @@ public class ComoFuncionaActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.como_funciona, menu);
+        getMenuInflater().inflate(R.menu.assistencia, menu);
         return true;
     }
 
@@ -79,39 +75,18 @@ public class ComoFuncionaActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.main_activity_menu) {
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(i);
-            finish();
-        } else if (id == R.id.como_funciona) {
-            Intent i = new Intent(getApplicationContext(), ComoFuncionaActivity.class);
-            startActivity(i);
-            finish();
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.sobre_nos) {
-            Intent i = new Intent(getApplicationContext(), SobreNosActivity.class);
-            startActivity(i);
-            finish();
-        }else if (id == R.id.brasopolis_menu) {
-            Intent i = new Intent(getApplicationContext(), BrasopolisActivity.class);
-            startActivity(i);
-            finish();
-        }else if (id == R.id.piranguinho_menu) {
-            Intent i = new Intent(getApplicationContext(), PiranguinhoActivity.class);
-            startActivity(i);
-            finish();
-        }else if (id == R.id.maria_da_fe_menu) {
-            Intent i = new Intent(getApplicationContext(), MariaDaFeActivity.class);
-            startActivity(i);
-            finish();
-        }else if (id == R.id.delfim_moreira_menu) {
-            Intent i = new Intent(getApplicationContext(), DelfimMoreiraActivity.class);
-            startActivity(i);
-            finish();
-        }else if (id == R.id.assitencia) {
-            Intent i = new Intent(getApplicationContext(), AssistenciaActivity.class);
-            startActivity(i);
-            finish();
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

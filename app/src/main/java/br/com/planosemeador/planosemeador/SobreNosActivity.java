@@ -108,6 +108,10 @@ public class SobreNosActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), DelfimMoreiraActivity.class);
             startActivity(i);
             finish();
+        }else if (id == R.id.assitencia) {
+            Intent i = new Intent(getApplicationContext(), AssistenciaActivity.class);
+            startActivity(i);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

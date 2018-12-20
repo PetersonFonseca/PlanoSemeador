@@ -55,6 +55,10 @@
         <activity
             android:name=".DelfimMoreiraActivity"
             android:label="@string/title_activity_delfim_moreira"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AssistenciaActivity"
+            android:label="@string/title_activity_assistencia"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
