@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:text="A Funerária Semeador proporciona a você e mais 9 familiares o direito a assistência funeral completa."
+                android:text="A Funerária Semeador proporciona a você e mais 9 dependentes o direito a assistência funeral completa."
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:layout_marginTop="20dp"
