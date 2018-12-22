@@ -59,6 +59,10 @@
         <activity
             android:name=".AssistenciaActivity"
             android:label="@string/title_activity_assistencia"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SorteiosActivity"
+            android:label="@string/title_activity_sorteios"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

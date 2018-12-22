@@ -4,8 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/assistencia_color"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".AssistenciaActivity"
     tools:showIn="@layout/app_bar_assistencia">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/assistencia_color"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="Assintência Funeral"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/assitencia"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="A Funerária Semeador proporciona a você e mais 9 familiares o direito a assistência funeral completa."
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

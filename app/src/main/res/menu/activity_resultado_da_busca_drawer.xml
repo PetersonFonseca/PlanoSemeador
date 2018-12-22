@@ -25,6 +25,14 @@
             android:icon="@mipmap/inicio"
             android:title="Delfim Moreira" />
         <item
+            android:id="@+id/assitencia"
+            android:icon="@mipmap/assistencia"
+            android:title="Assist. Funeral Completa" />
+        <item
+            android:id="@+id/sorteios"
+            android:icon="@mipmap/ic_sorteio"
+            android:title="Sorteios" />
+        <item
             android:id="@+id/como_funciona"
             android:icon="@mipmap/como_funciona"
             android:title="Como Funciona" />

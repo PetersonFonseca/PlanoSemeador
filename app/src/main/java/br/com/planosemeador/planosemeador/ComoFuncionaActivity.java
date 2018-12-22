@@ -112,6 +112,10 @@ public class ComoFuncionaActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), AssistenciaActivity.class);
             startActivity(i);
             finish();
+        }else if (id == R.id.sorteios) {
+            Intent i = new Intent(getApplicationContext(), SorteiosActivity.class);
+            startActivity(i);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

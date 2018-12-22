@@ -50,7 +50,7 @@ public class AssistenciaActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.assistencia, menu);
+        //getMenuInflater().inflate(R.menu.assistencia, menu);
         return true;
     }
 
@@ -106,6 +106,10 @@ public class AssistenciaActivity extends AppCompatActivity
             finish();
         }else if (id == R.id.assitencia) {
             Intent i = new Intent(getApplicationContext(), AssistenciaActivity.class);
+            startActivity(i);
+            finish();
+        }else if (id == R.id.sorteios) {
+            Intent i = new Intent(getApplicationContext(), SorteiosActivity.class);
             startActivity(i);
             finish();
         }

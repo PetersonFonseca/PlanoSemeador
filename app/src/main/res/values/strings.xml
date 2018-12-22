@@ -20,4 +20,5 @@
     <string name="title_activity_maria_da_fe">MariaDaFeActivity</string>
     <string name="title_activity_delfim_moreira">DelfimMoreiraActivity</string>
     <string name="title_activity_assistencia">AssistenciaActivity</string>
+    <string name="title_activity_sorteios">SorteiosActivity</string>
 </resources>

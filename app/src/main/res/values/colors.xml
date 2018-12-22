@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#55AB9F</color>
     <color name="como_funciona_color">#60BBDA</color>
+    <color name="assistencia_color">#b1be53</color>
+    <color name="sorteios_color">#e5d76b</color>
 </resources>
